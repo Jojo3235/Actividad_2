@@ -10,3 +10,14 @@ Puedes utilizar la sintaxis "elemento in lista"
 
 elementos = [1, 5, -2]
 """
+#sencillo, faltaria buscar como hacerlo en una clase, ya mañana
+
+def agregar_una_vez(lista, el):
+    #Quiza meter un while true para que no se cierre el programa si se introduce un valor erroneo, cambiar un poco de codigo ***
+    if el in lista:
+        raise ValueError("Error: Imposible añadir elementos duplicados => [elemento].") #***
+    else:
+        lista.append(el)
+        return lista    #Esto quiza ya meterlo en el __str__
+    
+#Faltan implementar tests y menu

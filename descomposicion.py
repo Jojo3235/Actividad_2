@@ -20,3 +20,5 @@ El programa deberá devolver una descomposición línea a línea como la siguien
 Pista
 
 Que el valor sea un número no significa necesariamente que deba serlo para formatearlo. Necesitarás jugar muy bien con los índices y realizar muchas conversiones entre tipos cadenas, números y viceversa"""
+
+# Crear un metodo de separacion de digitos, un metodo para formatearlos y un metodo para imprimirlos... pensar más mañana 
