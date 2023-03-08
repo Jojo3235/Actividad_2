@@ -18,11 +18,3 @@ class SepararLista:
         pares.sort()
         impares.sort()
         return f"Los numeros pares son: {pares} y los impares son: {impares}"
-    
-def main():
-    lista = [6,5,2,1,7]
-    separar = SepararLista(lista)
-    print(separar)
-
-if __name__ == "__main__":
-    main()

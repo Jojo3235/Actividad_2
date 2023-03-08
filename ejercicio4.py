@@ -11,7 +11,7 @@ class Tareas:
         valores = {}
         while True:
             try:
-                clave = leer_texto("Introduce una clave: ")
+                clave = leer_texto("Introduzca una tarea: ")
                 valor = pedir_numero()
                 valores[clave] = valor
                 if leer_texto("¿Quieres añadir otro valor? (s/n): ") == "n":
@@ -35,14 +35,3 @@ class Tareas:
             clave = list(diccionario.keys())[list(diccionario.values()).index(value)]
             lista_claves.append(clave)
         return lista_claves
-    
-def main():
-    diccionario_tareas = Tareas.valores_to_dict()
-    lista_valores = Tareas.generar_lista_valores(diccionario_tareas)
-    lista_claves = Tareas.devolver_claves(diccionario_tareas, lista_valores)
-    print("Estas son las tareas ordenadas por prioridad: ")
-    for i in lista_claves:
-        print(i)
-
-if __name__ == "__main__":
-    main()

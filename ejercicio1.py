@@ -13,16 +13,8 @@ class Cadena:
 
     @staticmethod
     def mostrar(cadena):
-        print(cadena)
+        return cadena
     
     def __str__(self):
         cadena = self.cadena.split(',')
         return f"{cadena[1]} ha sacado un {cadena[0]}"
-
-def main():
-    cadena = Cadena('zerauJ epeP,7')
-    cadena.mostrar(cadena.recuperar_cadena(cadena.cadena))          ## hacer que formatee la corrupta
-    print(cadena.__str__())
-
-if __name__ == '__main__':
-    main()
