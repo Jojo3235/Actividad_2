@@ -1,5 +1,3 @@
-from helpers import pedir_numero1_9
-
 class NumeroMagico:
 
     NUMERO_MAGICO = 12345679
