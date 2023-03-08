@@ -91,6 +91,3 @@ def iniciar():
             break
 
         input("\nPresione ENTER para continuar...")
-
-if __name__ == "__main__":
-    iniciar()
