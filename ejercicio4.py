@@ -8,10 +8,51 @@ Sugerencia
 Para ordenar automáticamente una lista es posible utilizar el método .sort(), deberias probarlo.
 """
 
-# Plantear mirarlo mediante deque
+from helpers import leer_texto, pedir_numero
 
-# Tienes una diccionarario del tipo {tarea:prioridad}, asignar segun el numero de prioridad a una cola/lista donde se puede generar 
-# o una lista con x indices y luego cambiarlos, o meter un .append mediante la ordenacion de los indices
 
-# A lo mejor generar un diccionario a partir de los valores ordenados de la lista de importancia generando un nuevo diccionario con los valores ordenados por importancia
-# Luego pasarlo a una cola/lista
+class Tareas:
+
+    def __init__(self, **kwargs):
+        self.tareas = kwargs
+
+    @staticmethod
+    def valores_to_dict():
+        valores = {}
+        while True:
+            try:
+                clave = leer_texto("Introduce una clave: ")
+                valor = pedir_numero()
+                valores[clave] = valor
+                if leer_texto("¿Quieres añadir otro valor? (s/n): ") == "n":
+                    return valores
+            except ValueError:
+                pass
+                print("Error")
+
+    @staticmethod
+    def generar_lista_valores(diccionario):
+        lista = []
+        for key, value in diccionario.items():
+            lista.append(value)
+        lista.sort()
+        return lista
+    
+    @staticmethod
+    def devolver_claves(diccionario, lista):
+        lista_claves = []
+        for value in lista:
+            clave = list(diccionario.keys())[list(diccionario.values()).index(value)]
+            lista_claves.append(clave)
+        return lista_claves
+    
+def main():
+    diccionario_tareas = Tareas.valores_to_dict()
+    lista_valores = Tareas.generar_lista_valores(diccionario_tareas)
+    lista_claves = Tareas.devolver_claves(diccionario_tareas, lista_valores)
+    print("Estas son las tareas ordenadas por prioridad: ")
+    for i in lista_claves:
+        print(i)
+
+if __name__ == "__main__":
+    main()
