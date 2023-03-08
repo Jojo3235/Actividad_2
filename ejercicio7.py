@@ -13,18 +13,5 @@ class ControlDeListas:
 
     @staticmethod
     def append_lista(lista, elemento):
-        if ControlDeListas.comprobar_no_pertenencia(lista,elemento) == True:
-            lista.append(elemento)
-            return lista
-        else:
-            return "Error: Imposible añadir elementos duplicados => {}.".format(elemento)
-        
-    
-def main():
-    lista = [1,2,3,4,5]
-    elemento = 5
-    lista = ControlDeListas.append_lista(lista, elemento)
-    print(lista)
-
-if __name__ == "__main__":
-    main()
+        lista.append(elemento)
+        return lista
