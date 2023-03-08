@@ -16,3 +16,20 @@ def pedir_numero():
         except ValueError:
             pass
             print("El numero debe ser un entero")
+
+def leer_texto(mensaje):
+    return input(mensaje)
+
+def valores_to_dict():
+    valores = {}
+    while True:
+        try:
+            clave = leer_texto("Introduce una clave: ")
+            valor = pedir_numero()
+            valores[clave] = valor
+            if leer_texto("¿Quieres añadir otro valor? (s/n): ") == "n":
+                return valores
+        except ValueError:
+            pass
+            print("Error")
+
